@@ -1,12 +1,6 @@
 package com.iRatherFear.Gaming;
 
 import com.iRatherFear.Gaming.HelloWorld.HelloWorldConfiguration;
-import com.iRatherFear.Gaming.game.GamingController;
-import com.iRatherFear.Gaming.game.MarioGame;
-import com.iRatherFear.Gaming.game.PacmanGame;
-import com.iRatherFear.Gaming.game.SuperControGame;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class GamingApplication {
