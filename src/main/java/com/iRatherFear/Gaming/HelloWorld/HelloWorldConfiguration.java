@@ -1,14 +1,17 @@
 package com.iRatherFear.Gaming.HelloWorld;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 //record Person(String name, int age) {}
 record Person(String name, int age, Address address){}
 record Address(String firstLine, String city) {}
 @Configuration
 public class HelloWorldConfiguration {
+    public  HelloWorldConfiguration(){}
     @Bean
     public String name() {
         return "Suuuu";
@@ -36,18 +39,20 @@ public class HelloWorldConfiguration {
     *   NOTE: You can name this variable anything. But no two bean should repeat the same data type.
     * */
     @Bean
-    public Person personParameterised(String name, int age, Address getAddress) {
+    public Person personParameterised(String name, int age, @Qualifier("addressfor")Address getAddress) {
         return new Person(name, age, getAddress);
     }
     @Bean(name = "getAddress")
+    @Primary
     public Address address() {
         return new Address("High Street", "Balewadi");
     }
 
-//    @Bean(name = "getAddress2")
-//    public Address address2() {
-//        return new Address("High Street", "Balewadi");
-//    }
+    @Bean(name = "getAddress2")
+    @Qualifier("addressfor")
+    public Address address2() {
+        return new Address("High Street", "Balewadi");
+    }
 
 
 }

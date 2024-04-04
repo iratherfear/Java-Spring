@@ -1,7 +1,5 @@
 package com.iRatherFear.Gaming.game;
 
-import com.iRatherFear.Gaming.GamingApplication;
-
 public class GamingController {
     private GamingConsole game;
     public GamingController(GamingConsole game) {

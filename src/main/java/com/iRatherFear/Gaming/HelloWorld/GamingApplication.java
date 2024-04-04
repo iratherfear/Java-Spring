@@ -1,6 +1,8 @@
-package com.iRatherFear.Gaming;
+package com.iRatherFear.Gaming.HelloWorld;
 
 import com.iRatherFear.Gaming.HelloWorld.HelloWorldConfiguration;
+
+import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class GamingApplication {
@@ -14,6 +16,7 @@ public class GamingApplication {
 //		System.out.println("Address bean: " + context.getBean("address"));
 		System.out.println("Address bean with different name than function name using name tag in bean annotation: " + context.getBean("getAddress"));
 		System.out.println("Person bean with values derived from other beans: " + context.getBean("getPersonUsingExistingBean"));
+		System.out.println("Bean with specific return type: " + context.getBean(Address.class));
 		System.out.println("Person2 bean with parameteised method: " + context.getBean("personParameterised"));
 	}
 
