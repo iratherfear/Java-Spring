@@ -3,8 +3,8 @@ package com.iRatherFear.Gaming.HelloWorld;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-record Person(String name, int age) {};
-record Address(String firstLine, String city) {};
+record Person(String name, int age) {}
+record Address(String firstLine, String city) {}
 @Configuration
 public class HelloWorldConfiguration {
     @Bean
