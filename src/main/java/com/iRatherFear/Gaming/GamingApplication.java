@@ -1,22 +1,26 @@
 package com.iRatherFear.Gaming;
 
+import com.iRatherFear.Gaming.HelloWorld.HelloWorldConfiguration;
 import com.iRatherFear.Gaming.game.GamingController;
 import com.iRatherFear.Gaming.game.MarioGame;
 import com.iRatherFear.Gaming.game.PacmanGame;
 import com.iRatherFear.Gaming.game.SuperControGame;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-@SpringBootApplication
 public class GamingApplication {
 
 	public static void main(String[] args) {
 //		SpringApplication.run(GamingApplication.class, args);
-//		MarioGame game = new MarioGame();
-//		SuperControGame game = new SuperControGame();
-		PacmanGame game = new PacmanGame();
-		GamingController controller = new GamingController(game);
-		controller.run();
+		var context = new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
+		System.out.println("Name bean: " + context.getBean("name"));
+		System.out.println("Age bean: " + context.getBean("age"));
+		System.out.println("Person bean: " + context.getBean("person"));
+		System.out.println("Address bean: " + context.getBean("address"));
+		System.out.println("Address bean with different name than function name using name tag in bean annotation: " + context.getBean("getAddress"));
+		System.out.println("Person bean with values derived from other beans: " + context.getBean("getPersonUsingExistingBean"));
+
 	}
 
 }
