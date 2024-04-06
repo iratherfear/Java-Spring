@@ -1,5 +1,8 @@
 package com.iRatherFear.Gaming.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class GamingController {
     private GamingConsole game;
     public GamingController(GamingConsole game) {

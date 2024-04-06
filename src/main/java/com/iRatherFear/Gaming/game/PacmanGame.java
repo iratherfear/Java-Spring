@@ -1,5 +1,8 @@
 package com.iRatherFear.Gaming.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class PacmanGame implements GamingConsole {
     @Override
     public void up() {
