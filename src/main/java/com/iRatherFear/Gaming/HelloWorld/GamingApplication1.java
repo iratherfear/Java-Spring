@@ -1,11 +1,8 @@
 package com.iRatherFear.Gaming.HelloWorld;
 
-import com.iRatherFear.Gaming.HelloWorld.HelloWorldConfiguration;
-
-import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class GamingApplication {
+public class GamingApplication1 {
 
 	public static void main(String[] args) {
 //		SpringApplication.run(GamingApplication.class, args);
