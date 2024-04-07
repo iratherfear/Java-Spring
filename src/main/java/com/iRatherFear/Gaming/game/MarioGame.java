@@ -1,5 +1,12 @@
 package com.iRatherFear.Gaming.game;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+@Component
+@Primary
+@Qualifier("MarioGameQualifier")
 public class MarioGame implements GamingConsole {
 
     public void up() {

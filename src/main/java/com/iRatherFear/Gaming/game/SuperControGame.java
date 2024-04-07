@@ -1,5 +1,10 @@
 package com.iRatherFear.Gaming.game;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+@Qualifier("SuperControGameQualifier")
 public class SuperControGame implements GamingConsole {
     @Override
     public void up() {
